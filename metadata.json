@@ -1,0 +1,5 @@
+{
+  "name": "ملف انجاز محمد الزايدي",
+  "description": "A sleek and responsive web application that fetches and displays GitHub user profiles, repositories, and contribution activity, built with React, TypeScript, and Tailwind CSS.",
+  "requestFramePermissions": []
+}
