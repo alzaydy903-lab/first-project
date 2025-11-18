@@ -1,5 +1,5 @@
 {
-  "name": "Copy of الاول علئ المدرسه - Student Portfolio",
-  "description": "A personal portfolio website for Mohammed Abdulrahman Attia Al-Zaydi to showcase his achievements, skills, and goals, with a special focus on his interest in financial trading.",
+  "name": "ملف انجاز محمد الزايدي",
+  "description": "A sleek and responsive web application that fetches and displays GitHub user profiles, repositories, and contribution activity, built with React, TypeScript, and Tailwind CSS.",
   "requestFramePermissions": []
 }
