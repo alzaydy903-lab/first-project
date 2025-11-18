@@ -1,0 +1,45 @@
+🔥 قواعد Firebase Security Rules - مهم جداً!
+
+⚠️ يجب تطبيق هذه القواعد في Firebase Console لحل مشكلة عدم الحفظ:
+
+1. اذهب إلى: https://console.firebase.google.com/
+2. اختر مشروع: mohammed-project1-86537
+3. اذهب إلى: Firestore Database > Rules
+4. استبدل القواعد بهذا الكود:
+
+```javascript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // قواعد التعليقات - مهمة!
+    match /teacherComments/{commentId} {
+      allow create: if true;  // السماح بالإنشاء
+      allow read: if true;    // السماح بالقراءة
+      allow delete: if true;  // السماح بالحذف
+      allow update: if false; // منع التعديل
+    }
+    
+    // قراءة عامة لبقية البيانات
+    match /portfolio/{document} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    // منع الوصول لأي مجموعات أخرى
+    match /{document=**} {
+      allow read: if false;
+      allow write: if false;
+    }
+  }
+}
+```
+
+5. اضغط "Publish" لتطبيق القواعد
+
+🚨 إذا لم تطبق هذه القواعد، ستحصل على خطأ "permission-denied"!
+
+للتحقق من الاتصال، افتح Console في المتصفح واكتب:
+testFirebase()
+
+هذا سيختبر الاتصال بـ Firebase ويعرض النتائج.
